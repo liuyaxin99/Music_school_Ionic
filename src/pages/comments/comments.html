@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color = "danger">
+    <ion-title>
+      <small> {{ comments.length }} people have commented</small>
+    </ion-title>
+      <button ion-button icon-only clear (click)="close()">
+        <ion-icon name="close"></ion-icon>
+      </button>   
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item-sliding *ngFor="let comment of comments" >
+     
+  <ion-item> 
+    <ion-icon item-left name="ios-chatbubbles-outline"></ion-icon>
+
+        <small>{{ comment.data().text }}
+        </small>
+        <small>
+          {{ comment.data().owner_name }} <i> {{ ago(comment.data().created.toDate()) }} ago</i>
+        </small>
+ </ion-item>
+      
+      <ion-item-options>
+        <button ion-button icon-only (click)="editComment(comment)" light>
+          <ion-icon name="paper"></ion-icon>
+        </button>
+        <button ion-button icon-only (click)="deleteComment(comment)" light>
+          <ion-icon name="trash"></ion-icon></button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>

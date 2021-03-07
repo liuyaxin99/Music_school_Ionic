@@ -1,0 +1,112 @@
+
+<ion-header>
+  <ion-toolbar color ="danger">
+      <ion-buttons left>
+          <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+          </button>
+        </ion-buttons>
+    <ion-title>About Us</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-list>
+      <ion-item *ngFor="let item of items" (click)="navigateToDetails(item)">
+        {{ item.Question }}
+      </ion-item>
+    </ion-list>
+
+    <ion-card  text-center>
+        <h1>Why Choose Us</h1>
+        <ion-card>
+          <h1><ion-icon color="danger" name="alert" item-start></ion-icon>Track record</h1>
+          <div>Established since 1983,Ossia Music School has a proven track record in helping students pass music exams.
+                  Most importantly,we develop the love of music in ur students.</div>
+        </ion-card>
+
+   <ion-card>
+          <h1><ion-icon color="danger" name="cash" item-start></ion-icon>Affordable</h1>
+          <div>Our music lessons are affordable,so that you don't have to pay through the nose for quality piano lessons taught by certified teachers.</div>
+   </ion-card>
+
+   <ion-card>
+          <h1><ion-icon  color="danger" name="musical-notes" item-start></ion-icon>Qualified and fun music teachers</h1>
+          <div>All our music teachers are professionally qualified to teach,but more than that,they are also passionate and fun teachers,who love to engage their students and inculcate the love of music in team!</div>
+   </ion-card>
+
+ 
+   <ion-card>
+          <h1><ion-icon  color="danger" name="pin" item-start></ion-icon>Conveniently located around 8 neighbourhoods</h1>
+          <div>We are located around the heartlands,so that it's easily accessible for our students and rental costs are cheaper,which means we can pass on the savings to students.</div>
+   </ion-card>
+  
+</ion-card>
+
+
+    <ion-card color="danger" border-radius="30px">
+        <h2 text-center> Begin your music journey with us. <br>Book your free music lesson trial today.</h2>
+         
+                <ion-item >
+                  <ion-label stacked>Name</ion-label>
+                  <ion-input type="text" class="rowStyle"></ion-input>
+                </ion-item>
+              
+                <ion-item >
+                  <ion-label stacked>Email</ion-label>
+                  <ion-input type="email" class="rowStyle"></ion-input>
+                </ion-item>
+                <ion-item >
+                  <ion-label stacked>Enquiry</ion-label>
+                  <ion-textarea rows="6" cols="20" placeholder="Enter any enquiries here..." class="enquiryStyle"></ion-textarea>
+                </ion-item>
+
+                
+                  <ion-label stacked  >Location </ion-label>
+                        <ion-list>
+                        <ion-item>
+                        <ion-label><h6>Outram Park</h6></ion-label>
+                        <ion-checkbox color="danger" checked="false"></ion-checkbox>
+                        </ion-item>
+                        <ion-item>
+                        <ion-label><h6>Novena</h6></ion-label>
+                        <ion-checkbox color="danger" checked="false"></ion-checkbox>
+                        </ion-item>   
+                        <ion-item>
+                        <ion-label><h6>Chinatown</h6></ion-label>
+                        <ion-checkbox color="danger" checked="false"></ion-checkbox>
+                        </ion-item>    
+                       </ion-list>      
+                <ion-label stacked  >Class </ion-label>
+                        <ion-list>
+                        <ion-item>
+                        <ion-label><h6>Pop Singing</h6></ion-label>
+                        <ion-checkbox color="danger" checked="false"></ion-checkbox>
+                        </ion-item>
+                        <ion-item>
+                        <ion-label><h6>Guitar</h6></ion-label>
+                        <ion-checkbox color="danger" checked="false"></ion-checkbox>
+                        </ion-item>   
+                        <ion-item>
+                        <ion-label><h6>Vocal</h6></ion-label>
+                        <ion-checkbox color="danger" checked="false"></ion-checkbox>
+                        </ion-item>    
+                        <ion-item>
+                        <ion-label><h6>Keyboard</h6></ion-label>
+                        <ion-checkbox color="danger" checked="false"></ion-checkbox>
+                        </ion-item> 
+                      
+                       </ion-list>                              
+    </ion-card>
+
+
+        <ion-row>
+            <button ion-button block round outline color ="danger" (click)="showAlert()"
+            style="margin-top:20px;">Submit</button>
+        </ion-row>
+
+        
+     
+</ion-content>

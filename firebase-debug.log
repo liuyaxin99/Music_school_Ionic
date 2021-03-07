@@ -1,0 +1,23 @@
+[debug] [2019-07-30T08:18:09.917Z] ----------------------------------------------------------------------
+[debug] [2019-07-30T08:18:09.919Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only functions
+[debug] [2019-07-30T08:18:09.919Z] CLI Version:   7.1.0
+[debug] [2019-07-30T08:18:09.920Z] Platform:      darwin
+[debug] [2019-07-30T08:18:09.920Z] Node Version:  v10.16.0
+[debug] [2019-07-30T08:18:09.921Z] Time:          Tue Jul 30 2019 16:18:09 GMT+0800 (Singapore Standard Time)
+[debug] [2019-07-30T08:18:09.921Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-07-30T08:18:09.940Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-07-30T08:18:09.941Z] > authorizing via signed-in user
+[debug] [2019-07-30T08:18:09.941Z] [iam] checking project beatsstudio-e1fdd for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2019-07-30T08:18:09.944Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-07-30T08:18:09.944Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-07-30T08:18:10.087Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-30T08:18:10.128Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/beatsstudio-e1fdd:testIamPermissions  
+
+[debug] [2019-07-30T08:18:11.509Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'beatsstudio-e1fdd'...
+[info] 
+[info] i  deploying functions
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint

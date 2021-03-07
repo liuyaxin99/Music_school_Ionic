@@ -1,0 +1,28 @@
+<ion-menu side="left"[content]="content">
+    <ion-header>
+        <ion-toolbar color="danger">
+            <ion-title>Menu</ion-title>
+         </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <ion-item (click)="go_to_news()" menuClose>
+                News
+            </ion-item>
+            <ion-item (click)="go_to_forum()" menuClose>
+                Forum
+            </ion-item>
+            <ion-item (click)="go_to_lessons()" menuClose>
+                Lessons
+            </ion-item>
+            <ion-item (click)="go_to_locations()" menuClose>
+                Locations
+            </ion-item>
+            <ion-item (click)="go_to_about()" menuClose>
+                About Us
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content></ion-nav>

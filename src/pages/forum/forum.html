@@ -1,0 +1,77 @@
+<ion-header>
+    <ion-toolbar color ="danger">
+        <ion-buttons left>
+            <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+            </button>
+        </ion-buttons>
+      <ion-title>Forum</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only clear (click)="logout()">
+          <ion-icon name="log-out"></ion-icon>
+        </button>
+      </ion-buttons>
+
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-row margin class="rowStyle">
+      <button ion-button icon-only color="danger" clear (click)="addPhoto()">
+        <ion-icon name="images"></ion-icon>
+      </button>
+  
+      <ion-input type="text" placeholder="Say something..."[(ngModel)]
+      ="text"></ion-input>
+      <button ion-button icon-only color="danger" clear  (click)="post()">
+          <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-row>
+  
+    <ion-refresher (ionRefresh)="refresh($event)">
+    <ion-refresher-content>
+  
+    </ion-refresher-content>
+    </ion-refresher>
+  
+    <ion-card *ngFor="let post of posts">
+  
+      <ion-item-divider color="danger">
+        {{ post.data().owner_name }} Says
+      </ion-item-divider>
+  
+      <ion-item text-wrap> 
+        {{ post.data().text }}
+      </ion-item>
+  
+      <ion-row class="bottom-bar">
+        <ion-col>
+          <button ion-button block icon-left clear small color="danger" class="border-right" (click)="like(post)">
+            <ion-icon name="thumbs-up"></ion-icon>
+            <small>{{ post.data().likesCount || 0 }} likes</small>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button block icon-left clear small color="danger" class="border-right" (click)="comment(post)">
+            <ion-icon name="text"></ion-icon>
+            <small>{{ post.data().commentsCount || 0 }} Comments</small>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button block icon-left clear small color="danger">
+           <small>{{ ago(post.data().created.toDate())}} ago</small> 
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  
+    <ion-infinite-scroll (ionInfinite)="loadMorePosts($event)">
+    <ion-infinite-scroll-content>
+  
+    </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  
+  </ion-content>
+  
+
+
